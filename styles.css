@@ -127,6 +127,7 @@ body {
         padding: 10px;
     }
 
+
     .navbar-links {
         display: none;
         flex-direction: column;
@@ -137,8 +138,15 @@ body {
         display: flex;
     }
 
+    
+.nav-link:hover {
+    color: gray;
+    background: none;
+    
+}
+
     .navbar-item {
-        margin: 5px 0;
+        margin: 8px 0;
         width: 100%;
     }
 
@@ -176,7 +184,7 @@ body {
         font-size: 24px;
         font-weight: bold;
         position: relative;
-        margin-left: 90%;
+        margin-left: 87%;
         margin-top: -25px;
     }
 
