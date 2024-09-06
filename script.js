@@ -1,41 +1,22 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const dropdownMenus = document.querySelectorAll('.dropdown-content');
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navbarLinks = document.querySelector('.navbar-links');
+const unOrdered_list = document.querySelector(".ul")
+const menu = document.querySelector(".menu")
+const cancel = document.querySelector(".cancel")
+const wait_list = document.querySelector(".wait-list")
+const section = document.querySelector(".section1")
 
-    navLinks.forEach((link, index) => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            dropdownMenus[index].style.display = dropdownMenus[index].style.display === 'block' ? 'none' : 'block';
-        });
-    });
+menu.addEventListener("click", (e) => {
+    menu.style.display ="none"
+    cancel.style.display ="block"
+    unOrdered_list.style.display ="flex"
+    wait_list.style.display ="block"
+    section.style.display ="none"
+})
 
-    const menuLink = document.getElementById('menu-link');
-    const dropdownMenu = document.getElementById('dropdown-menu');
+cancel.addEventListener("click", (e) => { 
+  menu.style.display ="block"
+  cancel.style.display ="none"
+  unOrdered_list.style.display ="none"
+  location.reload()
 
-    menuLink.addEventListener('click', (event) => {
-        event.preventDefault();
-        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
-    });
-
-    menuToggle.addEventListener('click', () => {
-        navbarLinks.classList.toggle('active');
-    });
-
-    document.addEventListener('click', (event) => {
-        navLinks.forEach((link, index) => {
-            if (!link.contains(event.target) && !dropdownMenus[index].contains(event.target)) {
-                dropdownMenus[index].style.display = 'none';
-            }
-        });
-
-        if (!menuLink.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.style.display = 'none';
-        }
-
-        if (!menuToggle.contains(event.target) && !navbarLinks.contains(event.target)) {
-            navbarLinks.classList.remove('active');
-        }
-    });
-});
+   
+})
